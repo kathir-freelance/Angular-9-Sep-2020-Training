@@ -1,0 +1,573 @@
+
+
+Angular 9 Training :
+=======================
+es 5 
+
+ES 6 - JS 
+
+class 
+
+let 
+const
+
+destructing
+
+template strings
+
+rest parameters
+
+default parameters
+
+arrow functions
+
+
+
+
+
+
+	var data=900;
+	var log=console.log;
+	let bl=888;
+
+	function getData(){
+		
+		var data=8000;
+		log(data);
+		log(bl);
+		{
+			let data=100000;
+			log(data);
+			{
+			let data=123;
+			log(data);
+			}
+			log('inside anonymous block '+data);			
+		}
+	log('outside anonymous block '+data);
+	}
+
+	getData();
+
+
+	let getHome=function(){
+		console.log('hi');
+	}
+
+	or
+
+Arrow function:
+
+	let getHome=()=>console.log('hi');
+	
+
+2 usage:
+
+	let getHome=function(var age){
+		console.log(age+1);
+		console.log('hi '+age);
+	}
+
+
+in arrow fn ==>
+		
+	let getHome=(age)=>{
+		console.log(age+1);
+		console.log('hi '+age);
+	}
+	
+3 rd usage:
+
+
+
+	let getHome=function(){
+			return 'hi'
+	}
+
+	or
+
+Arrow function:
+
+	let getHome=()=>'hi';
+	
+
+4th usage:
+
+	let getHome=function(msg){
+			var modified='hi '+msg+'===';
+			var temp=modified+' final data';
+			return temp;
+	}
+
+	or
+
+Arrow function:
+
+	let getHome=(msg)=>{
+			var modified='hi '+msg+'===';
+			var temp=modified+' final data';
+			return temp;
+	}
+	
+
+usage of this keyword : - major change between arrow and normal  function
+
+In regular functions the this keyword represented the object that called the function, which could be the window, the document, a button or whatever.
+
+With arrow functions the this keyword always represents the object that defined the arrow function.
+
+
+
+class:
+
+
+class Car {
+  constructor(brand) {
+    this.carname = brand;
+  }
+	
+   getCarName=function() {
+	console.log(this.carname);
+	}
+}
+
+
+class Ford extends Car{
+
+}
+
+default parameter:
+
+in es5 :
+
+function myFunction(x, y) {
+  // y is 10 if not passed or undefined
+	x=x || 10;
+	y=y || 0
+  return x + y;
+}
+
+
+template strings are new in es 6
+
+name='ajay'
+"ajay"
+var temp=`hi ${name} - ${a} - ${name}`
+undefined
+temp
+"hi ajay - 90 - ajay"
+
+
+features of typescript:
+
+
+ typescript===>js(es6) + strongly typed  + interfaces +dom manipulations
+
+JS = loosely typed ===var declarartion
+
+strongly typed ---> restriction of data done by declaring variable
+
+disadvantages:
+
+	long time for compilation
+
+		reason : browser cannot understand TS
+
+		we need a transpiler to convert TS into ES6 format
+
+		now what happens ES6 is understood by all modern browsers since they have JS engines
+
+	chrome -> V8
+	firefiox--> spidermonkey
+	safari - javascriptCore, webkit
+	IE & edge -chakra
+
+Transpiler - translator or compiler ---> which converts one src code to other
+
+	babel or traceur
+
+
+app.ts
+
+node ---installed
+node > 12
+npm > 5.4
+
+
+typescript here is a compiler or transpiler
+
+npm i typescript@min.
+
+or
+
+npm install typescript
+
+
+compiling typescript:
+
+tsc filename.ts
+
+output of abv cmd will generate a js file
+
+to run 
+
+node filename.js
+	
+
+alternate:
+
+ts-node
+
+npm i ts-node
+
+ts-node script.ts
+
+# Execute code with TypeScript. 
+ts-node -e 'console.log("Hello, world!")'
+ 
+# Execute, and print, code with TypeScript. 
+ts-node -p -e '"Hello, world!"'
+ 
+# Pipe scripts to execute with TypeScript. 
+echo 'console.log("Hello, world!")' | ts-node
+
+
+
+different datatype declarartion :
+
+let a:number=90;
+let b:number=0x37CF;
+let c:number=0b1100
+let d:number=90.8;
+
+
+console.log(a);
+console.log(b);
+console.log(c);
+console.log(d);
+
+//string decl
+
+//a='hi';
+//console.log(a); -- error
+
+let str:string='hello'
+console.log(str);
+
+let boo:Boolean=true;
+console.log(boo);
+
+
+//void declaration
+
+let e:void=undefined;
+
+//e=null;
+//e=120; // error
+console.log(e);
+
+
+//any decl
+//var vs object vs any
+
+let f:any='string';
+f=89;
+f=90.8;
+f=true;
+console.log(f);
+
+
+other dataypes:
+
+array
+
+var arr1:number[]=[1,3,5,8,6,7];
+
+or
+
+var arr2:Array<number>=[1,4,5,6,7]; //generic decl
+
+tuple:
+
+is alsso kind of array , diff is every data in  array can be restricted
+
+let a:[string,number,boolean];
+a=['hi',7,true];
+
+
+Angular :
+
+	frontend framework
+	mvc / mv * / mvvm arch
+	google proj
+	written using js
+
+	angular js 1.x
+	
+	angular 2 -----
+
+	component based arch
+	written using TS
+	released by sep 2016
+
+	TS - 1.8
+
+	angular 3 - ever got released
+	
+	angular 4 - mar 17
+	
+		* backward compatible with 2
+		* TS 2.1
+		* @ngif /else
+		
+		
+	angular 5 - 
+
+		build optimizer
+		compiler enhancements
+		Internationalization - Number,date,currency
+		Httpclient - @angular/http got depricated and moved into
+		@angular/common/http
+
+	httpModule : map(res=>res.json()) - removed, replaced by httpclient module and inject it
+
+	routing life cycle events are added
+	
+	Angular 6 : may 2018
+		
+
+	synchroonized @angular core, @angular common, angular compiler		
+
+	Cdk
+	angular cli - 2 new commmands -ng update,ng add
+
+	tree shakable providers
+	animations perf improvement
+	
+	angular 7 
+
+	cli 7
+	ang material 7  -UI
+	CDk and animation
+	virtual scrolling
+	drap and drop
+
+	TS 3.1
+	added node 10
+
+Angular 8:
+
+	opt in option of ivy engine
+	dynamic import in routing config
+	ang cli - 8.x
+	ng deploy added in ang cli
+	web worker support
+
+
+	
+angular 9
+
+	default ->ivy engine
+
+	chaange detection 
+
+	angular forms - <ng-form>
+	DI changes in core - providerIn
+	
+
+	service workers update
+	
+	I18N enchancements
+
+
+Angular CLI -important
+
+	set commands
+ng - angular
+
+
+ng add, ng update, ng new , ng test, ng serve,ng build, ng run
+
+type ng -- wull provide info abt commands
+
+if u need to create new ang proj
+
+ng new applName
+
+this creates  production ready application (ready to use or deploy)
+
+
+ng serve - will deploy application
+
+ng serve -o ===> deploy and opens in browser
+
+or
+
+npm start 
+
+
+packages.json - contains all the dependencies of ur proj
+
+proj > npm i 
+
+
+html---> js----> jsvm---> binary----> os
+
+os----> puts o/p on browser
+
+
+flutter - no js medium--- 80-120fps
+
+main.ts --starting of application
+
+app.module.ts ----> root module - contains all the component
+
+appcomp -root component
+
+other components will be embedded inside appcomp
+
+
+
+
+module in angular- 
+
+	collection of component
+	@NgModule - decorator
+
+
+decorator - meta info - background its a function which does some work
+
+They are just functions that can be used to add meta-data, properties or functions to the thing they are attached to.
+
+	@Component
+	@Injectible
+	@pipe
+
+@NgModule - decorator
+
+
+	@NgModule({
+	
+	declarations:[],
+	provided:[],
+	bootstrap:[],
+	exports:[],
+	imports:[]
+	})
+
+has to kept above a class
+
+exactly - AppModule - since this is root module of my application
+
+
+
+	@NgModule({	
+	declarations:[appcomp,page1comp,page2comp,headercomp,navcomp],
+	provided:[DI],//keep services
+	bootstrap:[appcomp],
+	exports:[],
+	imports:[]
+	})
+class AppModule{
+
+}
+
+
+AppComponent--->
+
+
+@Component({
+	selector: 'mytag'
+	style: NA
+	template: '<h1> hi hello</h1>'
+})
+class AppComp
+{
+	
+}
+
+
+goto index.html
+
+	<mytag></mytag>
+
+done by JS VM
+
+1. interprets tag written in index.html
+2. then searches for the selector in all the component, if found
+3. will check if it is registered with aapp module 
+4. if it is registered , then comes to the comp and loads the respective template and dipalys
+
+
+importing files
+
+import {classname/moduleName/..} from './folder/filename'
+
+./ --> same location as ur main.ts
+no extn needed along with filename
+ 
+eg:
+
+import { MyModule } from './mymodule/Mymodule';
+
+NOTE : any class to be imported has to be first of all exported
+
+
+data binding:
+
+	data to be displayed on the browser
+
+	where is the data?
+
+	data can be called as model
+	
+one way or two way binding 	
+
+
+one way binding :
+
+ property binding or event binding
+
+if the data is available in component class and to display in browser --- property binding
+
+if user is entering the data and that has to be stored in the component variable - event binding
+
+property binding :
+
+implemented thru interpolation symbol {{interpolation}}
+
+
+
+
+
+
+
+
+
+	
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
