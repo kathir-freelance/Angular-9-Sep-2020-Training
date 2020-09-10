@@ -538,8 +538,33 @@ implemented thru interpolation symbol {{interpolation}}
 
 
 
+how to get a text box value and display it by using event and prop binding
 
 
+
+
+directives :
+
+	preprocess
+
+	its a normal js class
+	we have a decorator - @directive
+
+
+4 directives
+
+	1. attribute
+	2. structural
+	3. component
+	4. custom 
+
+structural directive :
+
+ will have a prefix as => * 
+  ngFor, ngIf, ngSwitch
+
+
+*ngIf
 
 
 
@@ -547,7 +572,6 @@ implemented thru interpolation symbol {{interpolation}}
 	
 
 	
-
 
 
 
